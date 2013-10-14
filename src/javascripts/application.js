@@ -1,3 +1,3 @@
 $(function() {
-  $("#from-javascript").html('From javascript in src/javascripts/application.js');
+  $("#from-javascript").html('written by javascript in src/javascripts/application.js');
 });
