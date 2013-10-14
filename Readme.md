@@ -3,4 +3,5 @@
 [http://devblog.uc.wisc.edu/blog/grunt-build-tool/](http://devblog.uc.wisc.edu/blog/grunt-build-tool/)
 
 - npm install
-- grunt | grunt watch
+- grunt
+- grunt watch
