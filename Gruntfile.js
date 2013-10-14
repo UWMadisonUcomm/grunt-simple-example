@@ -11,14 +11,13 @@ module.exports = function(grunt){
         }
       }
     },
-    cssmin: {
-      main: {
+    less: {
+      application: {
+        options: {
+          yuicompress: true
+        },
         files: {
-          'assets/app.min.css': [
-            'src/stylesheets/bootstrap.css',
-            'src/stylesheetsbootstrap-theme.css',
-            'src/stylesheets/application.css'
-          ]
+          "assets/app.min.css": "src/stylesheets/application.less"
         }
       }
     },
@@ -28,17 +27,17 @@ module.exports = function(grunt){
         tasks: ['uglify']
       },
       stylesheets: {
-        files: ['src/stylesheets/**/*.css'],
-        tasks: ['cssmin']
+        files: ['src/stylesheets/**/*'],
+        tasks: ['less']
       }
     }
   });
 
   // Load plugins
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register tasks
-  grunt.registerTask('default', ['uglify', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'less']);
 }
